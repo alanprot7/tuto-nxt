@@ -1,12 +1,19 @@
+import { notFound } from "next/navigation"
+
 interface ProductReview {
     params: {
         productId: number
-        reviewId: number
+        reviewId: string
     }
 }
 
 
 export default function Review({ params }: ProductReview){
+
+    if(parseInt(params.reviewId) > 1000){
+        notFound()
+    }
+
     return(
         <div>
             <h1>Produto {params.productId}</h1>
