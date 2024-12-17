@@ -16,7 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header style={{
+          backgroundColor: "green"
+        }}>Cabeçalho da app</header>
+        {children}
+        <footer style={{
+          backgroundColor: "green"
+        }}>Rodapé da app</footer>
+      </body>
     </html>
   );
 }
