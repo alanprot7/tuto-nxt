@@ -14,6 +14,10 @@ export default function Review({ params }: ProductReview){
         notFound()
     }
 
+    if(parseInt(params.reviewId) === 900){
+        throw Error('Invalid 900 Id')
+    }
+
     return(
         <div>
             <h1>Produto {params.productId}</h1>
