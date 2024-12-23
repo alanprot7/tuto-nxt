@@ -16,7 +16,7 @@ export default function UsersLayout({children}: {children : React.ReactNode}){
     return(
         <div>
             <div>
-                <input style={{backgroundColor: "black"}} type="text" value={value} onChange={(e) => setValue(e.target.value)}/>
+                <input type="text" value={value} onChange={(e) => setValue(e.target.value)}/>
             </div>
             {navLinks.map((link) => {
                 const isActive = pathName.startsWith(link.href)

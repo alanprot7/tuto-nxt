@@ -18,16 +18,26 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #ffffff; /* Cor branca */
 }
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+h1 {
+  font-size: 2em; /* 2 vezes maior que o tamanho padrão */
+  margin-top: 1em; /* Adiciona uma linha acima do h1 */
+  margin-bottom: 1em; /* Adiciona uma linha abaixo do h1 */
+}
+
+* {
+  color: black; /* Define a cor da fonte como preta */
+}
+
+a {
+  color: blue; /* Define a cor da fonte como preta */
 }

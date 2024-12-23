@@ -2,7 +2,8 @@ export default function ProductDetailsLayout({children} : {children : React.Reac
     return (
         <>
             <p style={{
-                backgroundColor: 'blue'
+                backgroundColor: 'blue',
+                color: 'white'
             }}>Especificações</p>
             {children}
         </>
