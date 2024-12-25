@@ -1,7 +1,7 @@
 import { data } from "../data";
 
 export async function GET(
-    _request,
+    _request: Request,
     {params} : { params: {id: string}}
 ){
     const name = data.find(name => {
@@ -9,4 +9,33 @@ export async function GET(
     })
 
     return Response.json(name)
+}
+
+
+export async function PATCH(
+    request: Request,
+    { params }: { params : { id: string } }
+){
+    const body = await request.json()
+    
+    const { text } = body
+    const index = data.findIndex(user => {
+        return user.id === parseInt(params.id)
+    })
+
+    data[index].name = text
+    return Response.json(data[index])
+}
+
+export async function DELETE(
+    request: Request,
+    { params }: { params : { id: string } }
+){
+    const index = data.findIndex(user => {
+        return user.id === parseInt(params.id)
+    })
+
+    const deletedUser = data[index]
+    data.splice(index, 1)
+    return Response.json(deletedUser)
 }
